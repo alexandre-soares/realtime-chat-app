@@ -12,7 +12,24 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // run when client connects
 io.on("connection", (socket) => {
-	console.log("New WS Connection");
+	// Welcome current user
+	socket.emit("message", "Welcome to Realtime Chat app!");
+
+	// Broadcast when a user connects
+	socket.broadcast.emit("message", "A user has joined the chat");
+
+	// Runs when client disconnects
+	socket.on("disconnect", () => {
+		io.emit("message", "A user has left the chat");
+	});
+
+	// Listen for chatMessage
+	socket.on("chatMessage", (msg) => {
+		io.emit("message", msg);
+	});
+
+	// Broadcast to everyone
+	// io.emit();
 });
 
 const PORT = 3000 || process.env.PORT;
