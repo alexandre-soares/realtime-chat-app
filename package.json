@@ -1,0 +1,28 @@
+{
+	"name": "realtime-chat-app",
+	"version": "1.0.0",
+	"description": "realtime chat app",
+	"main": "server.js",
+	"scripts": {
+		"start": "node server",
+		"dev": "nodemon server"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/alexandre-soares/realtime-chat-app.git"
+	},
+	"author": "Alexandre Soares",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/alexandre-soares/realtime-chat-app/issues"
+	},
+	"homepage": "https://github.com/alexandre-soares/realtime-chat-app#readme",
+	"dependencies": {
+		"express": "^4.17.1",
+		"moment": "^2.27.0",
+		"socket.io": "^2.3.0"
+	},
+	"devDependencies": {
+		"nodemon": "^2.0.4"
+	}
+}
